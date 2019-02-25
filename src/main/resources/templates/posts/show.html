@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials :: head">
+    <title>Single Post Page</title>
+</head>
+<body>
+<nav th:replace="partials :: navbar"></nav>
+<h1>This is the single Posts Page</h1>
+<!--/*@thymesVar id="id" type=""*/-->
+<h1 th:text="${id}">Placeholder</h1>
+<footer th:replace="partials :: footer"></footer>
+</body>
+</html>
