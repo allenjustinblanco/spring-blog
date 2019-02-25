@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials :: head"><title>Posts Page</title></head>
+<head th:replace="partials :: head"><title>Create Posts Page</title></head>
 <body>
 <nav th:replace="partials :: navbar"></nav>
 <h1>This is the Creation page</h1>
 <!--/*@thymesVar id="post" type=""*/-->
 <form action="/posts/create" method="post" th:object="${post}">
     Title:
-    <input type="text" th:field="*{title}" required/>
+    <input type="text" th:field="*{title}" />
     <br />
     Description:
-    <input type="text" th:field="*{body}" th:value="*{body}" required/>
+    <input type="text" th:field="*{body}" />
     <br />
     <input type="submit" />
 </form>
+
 <footer th:replace="partials :: footer"></footer>
 </body>
 </html>

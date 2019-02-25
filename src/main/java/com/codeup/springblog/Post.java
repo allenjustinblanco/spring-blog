@@ -1,10 +1,20 @@
 package com.codeup.springblog;
 
-class Post {
-    private String title;
-    private String body;
-    private int id;
+import javax.persistence.*;
 
+@Entity
+@Table
+class Post {
+
+    //id BIGINT NOT NULL AUTO_INCREMENT
+    @Id @GeneratedValue
+    private int id;
+    //title VARCHAR(100) NOT NULL,
+    @Column(nullable = false, length=100)
+    private String title;
+    //body VARCHAR(255) NOT NULL
+    @Column(nullable = false)
+    private String body;
 
     public String getBody() {
         return body;
