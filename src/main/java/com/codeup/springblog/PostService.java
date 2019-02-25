@@ -23,4 +23,9 @@ class PostService {
         return posts.get((int) (id - 1));
     }
 
+    //save method
+    public void save(Post post){
+        post.setId(posts.size() + 1);
+        posts.add(post);
+    }
 }

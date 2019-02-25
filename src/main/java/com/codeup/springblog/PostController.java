@@ -35,18 +35,27 @@ public class PostController {
     }
 
 
-    @RequestMapping(path = "/posts/create", method = RequestMethod.GET)
-    @ResponseBody
-    public String getCreate() {
-        return "view the form for creating a post";
+    @GetMapping("/posts/create")
+    public String showCreateForm(Model model) {
+        model.addAttribute("post", new Post());
+        return "/posts/create";
     }
 
+    @PostMapping("/posts/create")
+    public String postCreate(@RequestParam(name = "title") String title, @RequestParam(name = "body") String body) {
+        Post post = new Post();
+        post.setTitle(title);
+        post.setBody(body);
+        postService.save(post);
+        return "redirect:/posts/index";
+    }
 
-    @RequestMapping(path = "/posts/create", method = RequestMethod.POST)
-    @ResponseBody
-    public String postCreate() {
-//        model.addAttribute("title", title);
-//        model.addAttribute("body", body);
-        return "create a new post";
+    @GetMapping("/posts/{id}/edit")
+    public String editPost(@RequestParam(value = "title") String title,@RequestParam(value = "body") String body ){
+        Post post = new Post();
+        post.setTitle(title);
+        post.setBody(body);
+        postService.save(post);
+        return "/posts";
     }
 }

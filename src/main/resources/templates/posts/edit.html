@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials :: head"><title>Edit Posts Page</title></head>
+<body>
+<nav th:replace="partials :: navbar"></nav>
+<h1>This is the Edit Posts page</h1>
+<!--/*@thymesVar id="post" type=""*/-->
+<form action="/posts/create" method="post" th:object="${post}">
+    Title:
+    <input th:field="*{title}" th:value="*{title}" required/>
+    <br />
+    Description:
+    <input th:field="*{body}" th:value="*{body}" required/>
+    <br />
+    <input type="submit" />
+</form>
+<footer th:replace="partials :: footer"></footer>
+</body>
+</html>
