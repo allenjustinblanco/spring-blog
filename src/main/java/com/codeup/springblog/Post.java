@@ -1,16 +1,16 @@
 package com.codeup.springblog;
 
-public class Post {
+class Post {
     private String title;
     private String body;
 
-    String getTitle(String title) {
+    String getTitle() {
         return title;
     }
     void setTitle(String title){
         this.title = title;
     }
-    String getBody(String body){
+    String getBody(){
         return body;
     }
     void setBody(String body){

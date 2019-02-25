@@ -31,7 +31,8 @@ public class PostController {
         Post post = new Post();
         post.setBody("body");
         post.setTitle("title");
-        model.addAttribute("post", post);
+        model.addAttribute("postTitle", post.getBody());
+        model.addAttribute("postBody", post.getTitle());
         return "/posts/show";
     }
 
