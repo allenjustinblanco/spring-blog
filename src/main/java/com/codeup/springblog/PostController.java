@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Long.parseLong;
+
 @Controller
 public class PostController {
     private final PostService postService;
@@ -38,10 +40,14 @@ public class PostController {
 
 
     @GetMapping("/posts/{id}")
-    public String getIndividualPosts(@PathVariable long id, Model model) {
-        model.addAttribute("id", id);
+    public String getIndividualPosts(@PathVariable String id, Model model) {
+//        List<Post> posts = postService.all();
+        Post post = postService.one(parseLong(id));
+        model.addAttribute("post", post);
         return "posts/show";
     }
+
+
 
 
     @GetMapping("/posts/create")

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragmets/head :: head">
-    <title>Single Post Page</title>
+<head th:replace="fragments/head :: head('Single Post Page')">
 </head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
-<div>
-    <h2>Title: <span th:text="${post.title}" /></h2>
-    <p>Author: <span th:text="${post.title}" /></p>
+<div class="box">
+    <h2><span th:text="${post.title}"></span></h2>
+    <p><span th:text="${post.body}"></span></p>
 </div>
 <footer th:replace="fragments/footer :: footer"></footer>
 </body>

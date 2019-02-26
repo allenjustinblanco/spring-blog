@@ -9,7 +9,7 @@
 <div th:each="post : ${posts}">
     <div class="box">
         <h2>
-            <a th:href="@{/posts/id (id=${post.id})}">
+            <a th:href="@{/posts/{id}(id=${post.id})}">
                 <span th:text="${post.title}"></span>
             </a>
         </h2>
@@ -19,7 +19,7 @@
 <div th:each="post : ${genPost}">
     <div class="box">
         <h2>
-            <a th:href="@{/posts/id (id=${post.id})}">
+            <a th:href="@{/posts/{id}(id=${post.id})}">
                 <span th:text="${post.title}"></span>
             </a>
         </h2>
