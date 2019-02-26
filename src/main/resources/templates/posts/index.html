@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials :: head">
-    <title>Posts Page</title>
-</head>
+<head th:replace="fragments/head :: head('View All Posts')"></head>
 <body>
-<nav th:replace="partials :: navbar"></nav>
+<nav th:replace="fragments/navbar :: navbar"></nav>
 <h1>This is the Posts page</h1>
-<!--/*@thymesVar id="posts" type=""*/-->
-<h2 th:text="${posts}"></h2>
-<footer th:replace="partials :: footer"></footer>
+<div th:each="post : ${posts}">
+    <h2>
+        <a th:href="@{posts/id} id=${post.id}">
+            <span th:text="${post.title}"></span>
+        </a>
+    </h2>
+    <p><span th:text="${post.body}"></span></p>
+</div>
+<footer th:replace="fragments/footer :: footer"></footer>
 </body>
 </html>

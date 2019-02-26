@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials :: head">
+<head th:replace="fragmets/head :: head">
     <title>Single Post Page</title>
 </head>
 <body>
-<nav th:replace="partials :: navbar"></nav>
+<nav th:replace="fragments/navbar :: navbar"></nav>
 <h1>This is the single Posts Page</h1>
 <!--/*@thymesVar id="postTitle" type=""*/-->
 <h1 th:text="${postTitle}">Post Title</h1>
 <!--/*@thymesVar id="postBody" type=""*/-->
 <h1 th:text="${postBody}">Post Body</h1>
-<footer th:replace="partials :: footer"></footer>
+<footer th:replace="fragments/footer :: footer"></footer>
 </body>
 </html>

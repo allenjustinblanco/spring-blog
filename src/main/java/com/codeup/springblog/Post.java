@@ -8,7 +8,7 @@ class Post {
 
     //id BIGINT NOT NULL AUTO_INCREMENT
     @Id @GeneratedValue
-    private int id;
+    private long id;
     //title VARCHAR(100) NOT NULL,
     @Column(nullable = false, length=100)
     private String title;
@@ -32,7 +32,7 @@ class Post {
         this.title = title;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

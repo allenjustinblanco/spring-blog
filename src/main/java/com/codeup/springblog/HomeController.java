@@ -11,10 +11,9 @@ import static java.lang.Integer.parseInt;
 @Controller
 public class HomeController {
 
-    @GetMapping("/home")
-    @ResponseBody
+    @GetMapping("/")
     public String home() {
-        return "This is the Landing Page!";
+        return "home";
     }
 
     @GetMapping("/roll-dice/{n}")

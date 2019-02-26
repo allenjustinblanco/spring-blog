@@ -24,7 +24,7 @@ class PostService {
     }
 
     //save method
-    public void save(Post post){
+    void save(Post post){
         post.setId(posts.size() + 1);
         posts.add(post);
     }

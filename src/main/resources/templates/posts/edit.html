@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials :: head"><title>Edit Posts Page</title></head>
+<head th:replace="fragments/head :: head('Edit Posts')"></head>
 <body>
-<nav th:replace="partials :: navbar"></nav>
+<nav th:replace="fragments/navbar :: navbar"></nav>
 <h1>This is the Edit Posts page</h1>
 <!--/*@thymesVar id="post" type=""*/-->
 <form action="/posts/create" method="post" th:object="${post}">
@@ -14,6 +14,6 @@
     <br />
     <input type="submit" />
 </form>
-<footer th:replace="partials :: footer"></footer>
+<footer th:replace="fragments/footer :: footer"></footer>
 </body>
 </html>

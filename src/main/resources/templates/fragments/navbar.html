@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="head :: head(navbar)"></head>
+<body>
+<nav th:fragment="navbar">
+    <table>
+        <tbody>
+        <tr>
+            <td>
+                <a th:href="@{/}">Home</a>
+            </td>
+            <td>
+                <a th:href="@{/posts}">Posts</a>
+            </td>
+            <td>
+                <a th:href="@{/posts/create}">Create Posts</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</nav>
+</body>
+</html>

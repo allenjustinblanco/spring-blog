@@ -2,7 +2,10 @@ package com.codeup.springblog;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,30 +18,42 @@ public class PostController {
         this.postService = postService;
     }
 
+//    private final PostRepository postDao;
+//
+//    public PostController(PostRepository postDao){
+//        this.postDao = postDao;
+//    }
+
+//    @GetMapping("/posts")
+//    public String index(Model model) {
+//        model.addAttribute("ads", postDao.findAll());
+//        return "/posts/index";
+//    }
+
     @GetMapping("/posts")
     public String getAllPosts(Model model) {
         List<Post> posts = new ArrayList<>();
 
         model.addAttribute("posts", posts);
-        return "/posts/index";
+        return "posts/index";
     }
 
 
     @GetMapping("/posts/{id}")
-    public String getIndividualPosts(Model model) {
+    public String getIndividualPosts(@PathVariable long id, Model model) {
         Post post = new Post();
         post.setBody("body");
         post.setTitle("title");
         model.addAttribute("postTitle", post.getBody());
         model.addAttribute("postBody", post.getTitle());
-        return "/posts/show";
+        return "posts/show";
     }
 
 
     @GetMapping("/posts/create")
     public String showCreateForm(Model model) {
         model.addAttribute("post", new Post());
-        return "/posts/create";
+        return "posts/create";
     }
 
     @PostMapping("/posts/create")
@@ -56,6 +71,6 @@ public class PostController {
         post.setTitle(title);
         post.setBody(body);
         postService.save(post);
-        return "/posts";
+        return "posts";
     }
 }
