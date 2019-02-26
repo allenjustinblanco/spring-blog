@@ -3,21 +3,19 @@
 <head th:replace="fragments/head :: head('Create Posts')"></head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
-<h1>This is the Creation page</h1>
-<form action="/posts/create" method="post" th:object="${post}">
-    <label>
-        Title:
-        <input type="text" th:field="*{title}"/>
-    </label>
-    <br />
-    <label>
-        Description:
-        <input type="text" th:field="*{body}"/>
-    </label>
-    <br />
-    <input type="submit" />
-</form>
-
+<div class="box">
+    <h1>Create a Post</h1>
+    <form th:action="@{/posts/create}" th:method="post" th:object="${post}">
+        <p>Title</p>
+            <input type="text" th:field="*{title}"/>
+        <br />
+            <p>Description</p>
+            <!--<input type="text" th:field="*{body}"/>-->
+            <textarea  th:field="*{body}" cols="30" rows="10"></textarea>
+        <br />
+        <input type="submit" />
+    </form>
+</div>
 <footer th:replace="fragments/footer :: footer"></footer>
 </body>
 </html>

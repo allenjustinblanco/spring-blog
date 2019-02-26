@@ -15,7 +15,7 @@ class Post {
     @Column(nullable = false)
     private String body;
 
-    public Post(long id, String title, String body){
+    public Post(){
         setId(id);
         setBody(body);
         setTitle(title);

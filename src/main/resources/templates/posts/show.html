@@ -5,7 +5,10 @@
 </head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
-<h1>This is the single Posts Page</h1>
+<div>
+    <h2>Title: <span th:text="${post.title}" /></h2>
+    <p>Author: <span th:text="${post.title}" /></p>
+</div>
 <footer th:replace="fragments/footer :: footer"></footer>
 </body>
 </html>

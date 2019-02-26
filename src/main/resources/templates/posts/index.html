@@ -3,14 +3,28 @@
 <head th:replace="fragments/head :: head('View All Posts')"></head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
-<h1>This is the Posts page</h1>
+<div class="box">
+    <h1>Spring Blog | Posts</h1>
+</div>
 <div th:each="post : ${posts}">
-    <h2>
-        <a th:href="@{/posts/id (id=${post.id})}">
-            Title: <span th:text="${post.title}"></span>
-        </a>
-    </h2>
-    <p>Body: <span th:text="${post.body}"></span></p>
+    <div class="box">
+        <h2>
+            <a th:href="@{/posts/id (id=${post.id})}">
+                <span th:text="${post.title}"></span>
+            </a>
+        </h2>
+        <p><span th:text="${post.body}"></span></p>
+    </div>
+</div>
+<div th:each="post : ${genPost}">
+    <div class="box">
+        <h2>
+            <a th:href="@{/posts/id (id=${post.id})}">
+                <span th:text="${post.title}"></span>
+            </a>
+        </h2>
+        <p><span th:text="${post.body}"></span></p>
+    </div>
 </div>
 <footer th:replace="fragments/footer :: footer"></footer>
 </body>
