@@ -5,7 +5,6 @@ import javax.persistence.*;
 @Entity
 @Table
 class Post {
-
     //id BIGINT NOT NULL AUTO_INCREMENT
     @Id @GeneratedValue
     private long id;
@@ -15,6 +14,17 @@ class Post {
     //body VARCHAR(255) NOT NULL
     @Column(nullable = false)
     private String body;
+
+    public Post(long id, String title, String body){
+        setId(id);
+        setBody(body);
+        setTitle(title);
+    }
+
+    Post(String title, String body) {
+        setTitle(title);
+        setBody(body);
+    }
 
     public String getBody() {
         return body;
@@ -36,7 +46,7 @@ class Post {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 }

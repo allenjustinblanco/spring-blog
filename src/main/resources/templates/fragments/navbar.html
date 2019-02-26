@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace="head :: head(navbar)"></head>
+<head th:replace="fragments/head :: head(navbar)"></head>
 <body>
 <nav th:fragment="navbar">
     <table>
         <tbody>
         <tr>
+            <td>
+                <img th:src="@{/images/blogging.svg}" alt="logo" width="30"/>
+            </td>
             <td>
                 <a th:href="@{/}">Home</a>
             </td>

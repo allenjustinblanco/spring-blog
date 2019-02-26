@@ -41,35 +41,26 @@ public class PostController {
 
     @GetMapping("/posts/{id}")
     public String getIndividualPosts(@PathVariable long id, Model model) {
-        Post post = new Post();
-        post.setBody("body");
-        post.setTitle("title");
-        model.addAttribute("postTitle", post.getBody());
-        model.addAttribute("postBody", post.getTitle());
+        model.addAttribute("id", id);
         return "posts/show";
     }
 
 
     @GetMapping("/posts/create")
     public String showCreateForm(Model model) {
-        model.addAttribute("post", new Post());
         return "posts/create";
     }
 
     @PostMapping("/posts/create")
     public String postCreate(@RequestParam(name = "title") String title, @RequestParam(name = "body") String body) {
-        Post post = new Post();
-        post.setTitle(title);
-        post.setBody(body);
+        Post post = new Post(title, body);
         postService.save(post);
         return "redirect:/posts/index";
     }
 
     @GetMapping("/posts/{id}/edit")
     public String editPost(@RequestParam(value = "title") String title,@RequestParam(value = "body") String body ){
-        Post post = new Post();
-        post.setTitle(title);
-        post.setBody(body);
+        Post post = new Post(title, body);
         postService.save(post);
         return "posts";
     }

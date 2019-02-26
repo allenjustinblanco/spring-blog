@@ -6,11 +6,11 @@
 <h1>This is the Posts page</h1>
 <div th:each="post : ${posts}">
     <h2>
-        <a th:href="@{posts/id} id=${post.id}">
-            <span th:text="${post.title}"></span>
+        <a th:href="@{/posts/id (id=${post.id})}">
+            Title: <span th:text="${post.title}"></span>
         </a>
     </h2>
-    <p><span th:text="${post.body}"></span></p>
+    <p>Body: <span th:text="${post.body}"></span></p>
 </div>
 <footer th:replace="fragments/footer :: footer"></footer>
 </body>

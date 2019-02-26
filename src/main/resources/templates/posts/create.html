@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head :: head"><title>Create Posts Page</title></head>
+<head th:replace="fragments/head :: head('Create Posts')"></head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
 <h1>This is the Creation page</h1>
-<!--/*@thymesVar id="post" type=""*/-->
 <form action="/posts/create" method="post" th:object="${post}">
-    Title:
-    <input type="text" th:field="*{title}" />
+    <label>
+        Title:
+        <input type="text" th:field="*{title}"/>
+    </label>
     <br />
-    Description:
-    <input type="text" th:field="*{body}" />
+    <label>
+        Description:
+        <input type="text" th:field="*{body}"/>
+    </label>
     <br />
     <input type="submit" />
 </form>
