@@ -1,45 +1,43 @@
 .box {
     width: 80%;
     margin: 5%;
-    background-color: #72d7fc;
+    background-color: #9ED0E6;
     text-align: center;
     padding: 5%;
     font-family: Raleway, sans-serif;
+    border: 2px solid #785964;
 }
-.box:hover {
-
- }
 
 a:-webkit-any-link{
-    color: black;
+    color: #000;
     text-decoration: none;
     padding: 5px;
 }
 a:hover{
-    color: #0B5BEF;
+    color: #82A7A6;
 }
 
 input {
     width: 100px;
-    border: 2px solid #0B5BEF;
+    border: 2px solid #785964;
     border-radius: 4px;
-    background-color: #083F59;
+    background-color: #82A7A6;
     height: 30px;
 }
 
 input[type=submit]{
     cursor: pointer;
-    color: white;
+    color: #000;
     margin-top: 1%;
-    border: 2px solid #0B5BEF;
+    border: 2px solid #785964;
     border-radius: 4px;
-    background-color: #083F59;
+    background-color: #82A7A6;
     height: 30px;
     font-family: Raleway, sans-serif;
 }
 
 input[type=submit]:hover {
-    color: #0B5BEF;
+    color: #82A7A6;
 }
 
 input[type=text]{
@@ -47,30 +45,35 @@ input[type=text]{
     padding: 1%;
     box-sizing: border-box;
     border-radius: 4px;
-    background-color: #083F59;
-    border: 2px solid #0B5BEF;
+    background-color: #82A7A6;
+    text-align: center;
+    font-family: Raleway, sans-serif;
+    color: #000;
 }
 
 textarea {
     width: 100%;
-    height: 150px;
+    height: 300px;
     padding: 12px 20px;
     box-sizing: border-box;
-    border: 2px solid #0B5BEF;
     border-radius: 4px;
     resize: none;
-    background-color: #083F59;
+    background-color: #82A7A6;
+    font-family: Raleway, sans-serif;
+    color: #000;
+    border: 2px solid #785964;
 }
 
 nav {
     width: 100%;
     height: 6px;
     padding: 15px;
-    background-color: #72d7fc;
+    background-color: #9ED0E6;
     font-family: Raleway, sans-serif;
 }
 
 html, body {
+    color: #000;
     width: 100%;
     height: 100%;
     margin: 0;

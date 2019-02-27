@@ -16,9 +16,6 @@ class Post {
     private String body;
 
     public Post(){
-        setId(id);
-        setBody(body);
-        setTitle(title);
     }
 
     Post(String title, String body) {

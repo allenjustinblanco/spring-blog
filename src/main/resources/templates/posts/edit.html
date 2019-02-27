@@ -5,12 +5,12 @@
 <nav th:replace="fragments/navbar :: navbar"></nav>
 <div class="box">
     <h1>Edit a Post</h1>
-    <form th:action="@{/posts/{id}/edit}" th:method="post">
+    <form th:action="@{/posts/edit/{id}(id=${id})}" method="post" th:object="${post}">
         <p>Title</p>
-        <input type="text" th:value="${title}"/>
+        <input type="text" th:field="*{title}"/>
         <br/>
         <p>Description</p>
-        <textarea cols="30" rows="10" th:value="${body}"></textarea>
+        <textarea cols="30" rows="10" th:field="*{body}"></textarea>
         <br/>
         <input type="submit" />
     </form>
