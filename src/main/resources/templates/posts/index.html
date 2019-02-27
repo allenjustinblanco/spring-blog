@@ -16,16 +16,6 @@
         <p><span th:text="${post.body}"></span></p>
     </div>
 </div>
-<div th:each="post : ${genPost}">
-    <div class="box">
-        <h2>
-            <a th:href="@{/posts/{id}(id=${post.id})}">
-                <span th:text="${post.title}"></span>
-            </a>
-        </h2>
-        <p><span th:text="${post.body}"></span></p>
-    </div>
-</div>
 <footer th:replace="fragments/footer :: footer"></footer>
 <script th:replace="fragments/scripts :: scripts"></script>
 </body>

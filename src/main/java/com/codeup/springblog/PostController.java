@@ -4,23 +4,22 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 import static java.lang.Long.parseLong;
 
 @Controller
 public class PostController {
-    private final PostService postService;
 
-    public PostController(PostService postService) {
-        this.postService = postService;
-    }
-
-//    private final PostRepository postDao;
+//    private final PostService postService;
 //
-//    public PostController(PostRepository postDao){
-//        this.postDao = postDao;
+//    public PostController(PostService postService) {
+//        this.postService = postService;
 //    }
+
+    private final PostRepository postDao;
+
+    public PostController(PostRepository postDao){
+        this.postDao = postDao;
+    }
 
 //    @GetMapping("/posts")
 //    public String index(Model model) {
@@ -30,16 +29,16 @@ public class PostController {
 
     @GetMapping("/posts")
     public String getAllPosts(Model model) {
-        List<Post> posts = postService.all();
-        List<Post> genPost = PostService.generatePost();
+        Iterable<Post> posts = postDao.findAll();
+//        List<Post> genPost = PostService.generatePost();
         model.addAttribute("posts", posts);
-        model.addAttribute("genPost", genPost);
+//        model.addAttribute("genPost", genPost);
         return "posts/index";
     }
 
     @GetMapping("/posts/{id}")
     public String getIndividualPosts(@PathVariable String id, Model model) {
-        Post post = postService.one(parseLong(id));
+        Post post = postDao.findOne(parseLong(id));
         model.addAttribute("post", post);
         return "posts/show";
     }
@@ -54,23 +53,32 @@ public class PostController {
     public String postCreate(@ModelAttribute Post post, @RequestParam(value = "title") String title, @RequestParam(value = "body") String body){
         post.setTitle(title);
         post.setBody(body);
-        postService.save(post);
+        postDao.save(post);
         return "redirect:/posts";
     }
 
     @GetMapping("/posts/edit")
-    public String editPost(@RequestParam String id, Model model) {
-        Post post = postService.one(parseLong(id));
+    public String showEditForm(@ModelAttribute Post post, Model model, @RequestParam(value = "title") String title, @RequestParam(value = "body") String body){
+        model.addAttribute("title", title);
+        model.addAttribute("body", body);
         model.addAttribute("post", post);
-        return "/posts/{id}/edit";
+        return "/posts/edit";
+    }
+
+    @GetMapping("/posts/{id}edit")
+    public String editPost(@PathVariable String id, Model model) {
+        Post post = postDao.findOne(parseLong(id));
+        model.addAttribute("post", post);
+        return "/posts/edit";
     }
 
     @PostMapping("/post/{id}/edit")
-    public  String postEdit(@RequestParam String id, @RequestParam(value = "title") String title, @RequestParam(value = "body") String body){
-        Post post = postService.one(parseLong(id));
+    public  String postEdit(@PathVariable String id, @RequestParam(value = "title") String title, @RequestParam(value = "body") String body, Model model){
+        Post post = postDao.findOne(parseLong(id));
         post.setTitle(title);
         post.setBody(body);
-        postService.save(post);
+        model.addAttribute("post", post);
+        postDao.save(post);
         return "redirect:/posts";
     }
 }

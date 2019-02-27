@@ -5,13 +5,13 @@
 <nav th:replace="fragments/navbar :: navbar"></nav>
 <div class="box">
     <h1>Edit a Post</h1>
-    <form th:action="@{/posts/{id}/edit}" th:method="post" th:object="post">
+    <form th:action="@{/posts/{id}/edit}" th:method="post">
         <p>Title</p>
-        <input type="text" th:field="${title}"/>
-        <br />
+        <input type="text" th:value="${title}"/>
+        <br/>
         <p>Description</p>
-        <textarea  th:value="*{post.body}" cols="30" rows="10"></textarea>
-        <br />
+        <textarea cols="30" rows="10" th:value="${body}"></textarea>
+        <br/>
         <input type="submit" />
     </form>
 </div>

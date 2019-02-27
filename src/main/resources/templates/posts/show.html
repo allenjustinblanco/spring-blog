@@ -5,9 +5,9 @@
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
 <div class="box">
+    <form th:action="@{/posts/edit}" th:method="get"><input type="submit" th:value="Edit"/></form>
     <h2><span th:text="${post.title}"></span></h2>
     <p><span th:text="${post.body}"></span></p>
-    <form th:action="@{/posts/{id}/edit(id=${post.id})}" th:method="get"><button type="submit"></button></form>
 </div>
 <footer th:replace="fragments/footer :: footer"></footer>
 <script th:replace="fragments/scripts :: scripts"></script>

@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface PostRepository extends CrudRepository<Post, Long> {
     Post findByTitle(String title);
-    Post findById(String id);
+    Post findById(Long id);
     // The following method shows you how to use named params in a HQL custom query:
     @Query("from Post a where a.title like %:term%")
     List<Post> searchByTitleLike(@Param("term") String term);

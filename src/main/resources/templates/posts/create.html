@@ -7,11 +7,10 @@
     <h1>Create a Post</h1>
     <form th:action="@{/posts/create}" th:method="post" th:object="${post}">
         <p>Title</p>
-            <input type="text" th:field="*{title}"/>
+            <input type="text" th:field="*{title}" th:required="required"/>
         <br />
             <p>Description</p>
-            <!--<input type="text" th:field="*{body}"/>-->
-            <textarea  th:field="*{body}" cols="30" rows="10"></textarea>
+            <textarea  th:field="*{body}" cols="30" rows="10" th:required="required"></textarea>
         <br />
         <input type="submit" />
     </form>

@@ -3,7 +3,7 @@ package com.codeup.springblog;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name="posts")
 class Post {
     //id BIGINT NOT NULL AUTO_INCREMENT
     @Id @GeneratedValue
@@ -12,7 +12,7 @@ class Post {
     @Column(nullable = false, length=100)
     private String title;
     //body VARCHAR(255) NOT NULL
-    @Column(nullable = false)
+    @Column(nullable = false, length = 5000)
     private String body;
 
     public Post(){
