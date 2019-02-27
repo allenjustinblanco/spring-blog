@@ -14,8 +14,17 @@ class Post {
     //body VARCHAR(255) NOT NULL
     @Column(nullable = false, length = 5000)
     private String body;
+    //userId VARCHAR(255) NOT NULL
+    @Column(nullable = false)
+    private long userId;
 
     public Post(){
+    }
+
+    public Post(long userId, String title, String body){
+        this.userId = userId;
+        this.title = title;
+        this.body = body;
     }
 
     Post(String title, String body) {
@@ -45,5 +54,13 @@ class Post {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(){
+        this.userId = userId;
     }
 }
