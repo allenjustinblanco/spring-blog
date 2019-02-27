@@ -3,18 +3,22 @@
 <head th:replace="fragments/head :: head('View All Posts')"></head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
-<div class="box">
+<div class="container">
+<div class="jumbotron">
     <h1>Spring Blog | Posts</h1>
 </div>
 <div th:each="post : ${posts}">
     <div class="box">
         <h2>
-            <a th:href="@{/posts/{id}(id=${post.id})}">
+            <!--<a th:href="@{/posts/{id}(id=${post.id})}">-->
                 <span th:text="${post.title}"></span>
-            </a>
+            <!--</a>-->
         </h2>
-        <p><span th:text="${post.body}"></span></p>
+        <form  th:action="@{/posts/{id}(id=${post.id})}">
+            <input type="submit" value="Read more"/>
+        </form>
     </div>
+</div>
 </div>
 <footer th:replace="fragments/footer :: footer"></footer>
 <script th:replace="fragments/scripts :: scripts"></script>

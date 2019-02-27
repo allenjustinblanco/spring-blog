@@ -1,9 +1,8 @@
-function darkTheme() {
-    document.getElementById('MyPage').style.backgroundColor = "black";
-    document.getElementById('MyPage').style.color = "white";
-}
-
-function lightTheme() {
-    document.getElementById('MyPage').style.backgroundColor = "white";
-    document.getElementById('MyPage').style.color = "black";
+var sheet = "/css/main.css";
+function swapStyleSheet(){
+    if(sheet === "/css/main.css"){
+        document.getElementById("pagestyle").setAttribute("href", sheet);
+    } else {
+        document.getElementById("pagestyle").setAttribute("href", "/css/dark.css");
+    }
 }
