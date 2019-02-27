@@ -12,9 +12,7 @@ import static java.lang.Integer.parseInt;
 public class HomeController {
 
     @GetMapping("/")
-    public String home() {
-        return "home";
-    }
+    public String home() { return "home"; }
 
     @GetMapping("/roll-dice/{n}")
     @ResponseBody

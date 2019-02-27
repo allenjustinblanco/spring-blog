@@ -4,7 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static java.lang.Long.parseLong;
@@ -38,17 +37,12 @@ public class PostController {
         return "posts/index";
     }
 
-
     @GetMapping("/posts/{id}")
     public String getIndividualPosts(@PathVariable String id, Model model) {
-//        List<Post> posts = postService.all();
         Post post = postService.one(parseLong(id));
         model.addAttribute("post", post);
         return "posts/show";
     }
-
-
-
 
     @GetMapping("/posts/create")
     public String showCreateForm(Model model) {
@@ -64,10 +58,19 @@ public class PostController {
         return "redirect:/posts";
     }
 
-    @GetMapping("/posts/{id}/edit")
-    public String editPost(@RequestParam(value = "title") String title,@RequestParam(value = "body") String body ){
-        Post post = new Post(title, body);
+    @GetMapping("/posts/edit")
+    public String editPost(@RequestParam String id, Model model) {
+        Post post = postService.one(parseLong(id));
+        model.addAttribute("post", post);
+        return "/posts/{id}/edit";
+    }
+
+    @PostMapping("/post/{id}/edit")
+    public  String postEdit(@RequestParam String id, @RequestParam(value = "title") String title, @RequestParam(value = "body") String body){
+        Post post = postService.one(parseLong(id));
+        post.setTitle(title);
+        post.setBody(body);
         postService.save(post);
-        return "posts";
+        return "redirect:/posts";
     }
 }

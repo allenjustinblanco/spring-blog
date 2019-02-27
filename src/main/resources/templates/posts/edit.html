@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head th:replace="fragments/head :: head('Edit Posts')"></head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
-<h1>This is the Edit Posts page</h1>
-<!--/*@thymesVar id="post" type=""*/-->
-<form action="/posts/create" method="post" th:object="${post}">
-    Title:
-    <input th:field="*{title}" th:value="*{title}" />
-    <br />
-    Description:
-    <input th:field="*{body}" th:value="*{body}" />
-    <br />
-    <input type="submit" />
-</form>
+<div class="box">
+    <h1>Edit a Post</h1>
+    <form th:action="@{/posts/{id}/edit}" th:method="post" th:object="post">
+        <p>Title</p>
+        <input type="text" th:field="${title}"/>
+        <br />
+        <p>Description</p>
+        <textarea  th:value="*{post.body}" cols="30" rows="10"></textarea>
+        <br />
+        <input type="submit" />
+    </form>
+</div>
 <footer th:replace="fragments/footer :: footer"></footer>
+<script th:replace="fragments/scripts :: scripts"></script>
 </body>
 </html>
