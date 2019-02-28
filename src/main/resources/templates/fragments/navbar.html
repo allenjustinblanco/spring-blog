@@ -2,24 +2,32 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head th:replace="fragments/head :: head(navbar)"></head>
 <body>
-<nav th:fragment="navbar">
-    <div class="topNav">
-        <table>
-            <tbody>
-            <tr>
-                <td>
-                    <a th:href="@{/posts}"><img th:src="@{/images/blogging.svg}" alt="logo" width="30"/></a>
-                </td>
-                <!--<td>-->
-                    <!--<a th:href="@{/posts}">Posts</a>-->
-                <!--</td>-->
-                <td>
-                    <a th:href="@{/posts/create}">Create Posts</a>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+<th:block  th:fragment="navbar">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script th:fragment="fragments/scripts :: scripts"></script>
+<nav>
+    <div class="nav-wrapper teal darken-1">
+        <a th:href="@{/}" class="brand-logo">Logo</a>
+        <a th:href="@{#}" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">=</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/posts}">Posts</a></li>
+            <li><a th:href="@{/posts/create}">Create Posts</a></li>
+        </ul>
     </div>
 </nav>
+<ul id="slide-out" class="sidenav">
+    <li><div class="user-view">
+        <div class="background">
+            <img th:src="@{https://lorempixel.com/city/400/200}"/>
+        </div>
+        <a th:href="@{#user}"><img class="circle" th:src="@{https://lorempixel.com/sports/10/10}"/></a>
+        <a th:href="@{#name}"><span class="white-text name">Allen Justin Blanco</span></a>
+        <a th:href="@{#email}"><span class="white-text email">blanco.allenjustin@gmail.com</span></a>
+    </div></li>
+    <li><a class="waves-effect" th:href="@{/}">Home</a></li>
+    <li><a class="waves-effect" th:href="@{/posts}">Posts</a></li>
+</ul>
+</th:block>
 </body>
 </html>

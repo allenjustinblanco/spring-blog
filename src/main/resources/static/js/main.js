@@ -1,8 +1,7 @@
-var sheet = "/css/main.css";
-function swapStyleSheet(){
-    if(sheet === "/css/main.css"){
-        document.getElementById("pagestyle").setAttribute("href", sheet);
-    } else {
-        document.getElementById("pagestyle").setAttribute("href", "/css/dark.css");
-    }
-}
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, options);
+});
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+});

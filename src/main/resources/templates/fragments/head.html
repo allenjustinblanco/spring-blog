@@ -2,9 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head th:fragment="head(title)">
     <title th:text="${'Spring Blog | ' + title}"></title>
-    <link id="pagestyle" rel="stylesheet" href="/css/main.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet"/>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script th:replace="fragments/scripts :: scripts"></script>
 </head>
 <body>
 </body>

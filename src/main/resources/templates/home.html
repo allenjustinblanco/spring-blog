@@ -3,10 +3,120 @@
 <head th:replace="fragments/head :: head('Welcome Home!')"></head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
-<div class="box">
-    <h1>Spring Blog</h1>
-    <p>Welcome!</p>
-</div>
+<section id="intro">
+
+    <!-- Flexslider Start-->
+    <div id="intro-slider" class="flexslider">
+
+        <ul class="slides">
+
+            <!-- Slide -->
+            <li>
+                <div class="row">
+                    <div class="col full">
+                        <div class="slider-text">
+                            <h2>Hello, I am <span>Allen Justin Blanco</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Slide -->
+            <li>
+                <div class="row">
+                    <div class="col full">
+                        <div class="slider-text">
+                            <h3>Take a look at some of <a href="#portfolio" title="">my work</a> or <a href="#contact" title="">contact me</a> to discuss how I can help you.</h3>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</section>
+    <!-- Flexslider End-->
+    <section id="portfolio">
+
+        <div class="row section-head">
+            <div class="col full">
+
+                <h2>Portfolio</h2>
+                <p class="desc">Check out my latest projects.</p>
+
+                <p class="intro">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+                    deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.
+                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!-- Portfolio Wrapper -->
+            <div id="portfolio-wrapper">
+
+                <div class="col portfolio-item">
+                    <div class="item-wrap">
+                        <a href="#" data-reveal-id="modal-01"><img th:src="@{http://lorempixel.com/city/400/200}" alt=""/></a>
+                        <div class="portfolio-item-meta">
+                            <h5><a href="#">Local Legends</a></h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col portfolio-item">
+                    <div class="item-wrap">
+                        <a href="#" data-reveal-id="modal-02"><img th:src="@{http://lorempixel.com/abstract/400/200}" alt=""/></a>
+                        <div class="portfolio-item-meta">
+                            <h5><a href="#">Movie Application</a></h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col portfolio-item">
+                    <div class="item-wrap">
+                        <a href="#" data-reveal-id="modal-03"><img th:src="@{http://lorempixel.com/animals/400/200}" alt=""/></a>
+                        <div class="portfolio-item-meta">
+                            <h5><a href="#">Coffee Project</a></h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col portfolio-item">
+                    <div class="item-wrap">
+                        <a href="#" data-reveal-id="modal-04"><img th:src="@{http://lorempixel.com/nature/400/200}" alt=""/></a>
+                        <div class="portfolio-item-meta">
+                            <h5><a href="#">Codeup Design</a></h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col portfolio-item">
+                    <div class="item-wrap">
+                        <a href="#" data-reveal-id="modal-05"><img th:src="@{http://lorempixel.com/transport/400/200}" alt=""/></a>
+                        <div class="portfolio-item-meta">
+                            <h5><a href="#">Weather Application</a></h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col portfolio-item">
+                    <div class="item-wrap">
+                        <a href="#" data-reveal-id="modal-06"><img th:src="@{http://lorempixel.com/technics/400/200}" alt=""/></a>
+                        <div class="portfolio-item-meta">
+                            <h5><a href="#">Contacts Manager</a></h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- Portfolio Wrapper End -->
+
+
+        </div> <!-- End Row -->
+
+</section> <!-- Intro Section End-->
 <footer th:replace="fragments/footer :: footer"></footer>
 <script th:replace="fragments/scripts :: scripts"></script>
 </body>
