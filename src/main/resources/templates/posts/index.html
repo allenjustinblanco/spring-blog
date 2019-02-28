@@ -3,7 +3,7 @@
 <head th:replace="fragments/head :: head('View All Posts')"></head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
-
+<div class="container">
     <div class="row">
         <div class="col s12 m6" th:each="post : ${posts}">
             <div class="card blue darken-1">
@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-
+</div>
 <footer th:replace="fragments/footer :: footer"></footer>
 <script th:replace="fragments/scripts :: scripts"></script>
 </body>

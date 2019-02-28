@@ -3,40 +3,35 @@
 <head th:replace="fragments/head :: head('Welcome Home!')"></head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
-<section id="intro">
-
-    <!-- Flexslider Start-->
-    <div id="intro-slider" class="flexslider">
-
-        <ul class="slides">
-
-            <!-- Slide -->
-            <li>
-                <div class="row">
-                    <div class="col full">
-                        <div class="slider-text">
-                            <h2>Hello, I am <span>Allen Justin Blanco</span></h2>
-                        </div>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Slide -->
-            <li>
-                <div class="row">
-                    <div class="col full">
-                        <div class="slider-text">
-                            <h3>Take a look at some of <a href="#portfolio" title="">my work</a> or <a href="#contact" title="">contact me</a> to discuss how I can help you.</h3>
-                        </div>
-                    </div>
-                </div>
-            </li>
-
-        </ul>
+<div class="container">
+<section class="blue" id="top">
+    <!--<video th:src="@{/videos/aerial.mp4}" th:autoplay="true" th:loop="true" th:audio="muted" th:inline="text">-->
+        <!--</video>-->
+    <div class="col s12 m12 l12">
+    <img th:src="@{/images/business.jpg}" alt="" width="100%"/>
+    </div>
+    <div class="callout center-align">
+        <h3>
+            <p>Full Stack Web Developer
+                <br/>| HTML5 - CSS - JS - JAVA |</p>
+        </h3>
     </div>
 </section>
-    <!-- Flexslider End-->
-    <section id="portfolio">
+<!--<div class="full-silder">-->
+    <!--<div class="carousel carousel-slider" data-indicators="true">-->
+        <!--<a th:href="@{#one}" class="carousel-item"><img th:src="@{/images/cardimg.jpg}"></a>-->
+        <!--<a th:href="@{#two}" class="carousel-item"><img th:src="@{/images/cardimg.jpg}"></a>-->
+        <!--<a th:href="@{#three}" class="carousel-item"><img th:src="@{/images/cardimg.jpg}"></a>-->
+    <!--</div>-->
+
+    <!--&lt;!&ndash; next and prev buttons &ndash;&gt;-->
+
+    <!--<div class="next green"><i class="material-icons large">navigate_next</i></div>-->
+    <!--<div class="prev green"><i class="material-icons large">navigate_before</i></div>-->
+<!--</div>-->
+
+    <div class="fixed-action-btn"><a class="btn-floating btn-small blue" th:href="@{#top}"><i class="small material-icons"></i></a></div>
+    <section id="portfolio" class="center-align">
 
         <div class="row section-head">
             <div class="col full">
@@ -57,54 +52,54 @@
             <!-- Portfolio Wrapper -->
             <div id="portfolio-wrapper">
 
-                <div class="col portfolio-item">
+                <div class="col s12 m6 portfolio-item">
                     <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-01"><img th:src="@{http://lorempixel.com/city/400/200}" alt=""/></a>
+                        <a href="#" data-reveal-id="modal-01"><img th:src="@{/images/cardimg.jpg}" alt="" width="100%"/></a>
                         <div class="portfolio-item-meta">
                             <h5><a href="#">Local Legends</a></h5>
                         </div>
                     </div>
                 </div>
 
-                <div class="col portfolio-item">
+                <div class="col s12 m6 portfolio-item">
                     <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-02"><img th:src="@{http://lorempixel.com/abstract/400/200}" alt=""/></a>
+                        <a href="#" data-reveal-id="modal-02"><img th:src="@{/images/cardimg.jpg}" alt="" width="100%"/></a>
                         <div class="portfolio-item-meta">
                             <h5><a href="#">Movie Application</a></h5>
                         </div>
                     </div>
                 </div>
 
-                <div class="col portfolio-item">
+                <div class="col s12 m6 portfolio-item">
                     <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-03"><img th:src="@{http://lorempixel.com/animals/400/200}" alt=""/></a>
+                        <a href="#" data-reveal-id="modal-03"><img th:src="@{/images/cardimg.jpg}" alt="" width="100%"/></a>
                         <div class="portfolio-item-meta">
                             <h5><a href="#">Coffee Project</a></h5>
                         </div>
                     </div>
                 </div>
 
-                <div class="col portfolio-item">
+                <div class="col s12 m6 portfolio-item">
                     <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-04"><img th:src="@{http://lorempixel.com/nature/400/200}" alt=""/></a>
+                        <a href="#" data-reveal-id="modal-04"><img th:src="@{/images/cardimg.jpg}" alt="" width="100%"/></a>
                         <div class="portfolio-item-meta">
                             <h5><a href="#">Codeup Design</a></h5>
                         </div>
                     </div>
                 </div>
 
-                <div class="col portfolio-item">
+                <div class="col s12 m6 portfolio-item">
                     <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-05"><img th:src="@{http://lorempixel.com/transport/400/200}" alt=""/></a>
+                        <a href="#" data-reveal-id="modal-05"><img th:src="@{/images/cardimg.jpg}" alt="" width="100%"/></a>
                         <div class="portfolio-item-meta">
                             <h5><a href="#">Weather Application</a></h5>
                         </div>
                     </div>
                 </div>
 
-                <div class="col portfolio-item">
+                <div class="col s12 m6 portfolio-item">
                     <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-06"><img th:src="@{http://lorempixel.com/technics/400/200}" alt=""/></a>
+                        <a href="#" data-reveal-id="modal-06"><img th:src="@{/images/cardimg.jpg}" alt="" width="100%"/></a>
                         <div class="portfolio-item-meta">
                             <h5><a href="#">Contacts Manager</a></h5>
                         </div>
@@ -116,7 +111,8 @@
 
         </div> <!-- End Row -->
 
-</section> <!-- Intro Section End-->
+    </section> <!-- Intro Section End-->
+</div>
 <footer th:replace="fragments/footer :: footer"></footer>
 <script th:replace="fragments/scripts :: scripts"></script>
 </body>
