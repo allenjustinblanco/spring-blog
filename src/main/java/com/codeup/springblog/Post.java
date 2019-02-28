@@ -1,5 +1,7 @@
 package com.codeup.springblog;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,6 +19,9 @@ class Post {
     //userId VARCHAR(255) NOT NULL
     @Column(nullable = false)
     private long userId;
+
+    @Value("${file-upload-path}")
+    private String uploadPath;
 
     public Post(){
     }

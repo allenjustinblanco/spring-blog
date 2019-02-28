@@ -27,6 +27,12 @@
                 <i class="material-icons right"></i>
             </button>
         </form>
+        <form th:action="@{/fileupload}" method="post" enctype="multipart/form-data">
+            <label for="file">Upload a file!</label>
+            <input id="file" name="file" type="file" />
+            <br />
+            <input type="submit" value="upload" />
+        </form>
     </div>
 </div>
 <footer th:replace="fragments/footer :: footer"></footer>

@@ -3,33 +3,20 @@
 <head th:replace="fragments/head :: head('Welcome Home!')"></head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
-<div class="container">
-<section class="blue" id="top">
-    <!--<video th:src="@{/videos/aerial.mp4}" th:autoplay="true" th:loop="true" th:audio="muted" th:inline="text">-->
-        <!--</video>-->
-    <div class="col s12 m12 l12">
-    <img th:src="@{/images/business.jpg}" alt="" width="100%"/>
-    </div>
-    <div class="callout center-align">
+<!--<video th:src="@{/videos/aerial.mp4}" th:autoplay="true" th:loop="true" th:audio="muted" th:inline="text">-->
+<!--</video>-->
+<div class="imageBox">
+    <img th:src="@{/images/blur.jpg}" alt="image" width="100%"/>
+    <div class="center-align">
         <h3>
-            <p>Full Stack Web Developer
-                <br/>| HTML5 - CSS - JS - JAVA |</p>
+            Full Stack Web Developer
+            <br/>
+            | HTML5 - CSS - JS - JAVA |
         </h3>
     </div>
-</section>
-<!--<div class="full-silder">-->
-    <!--<div class="carousel carousel-slider" data-indicators="true">-->
-        <!--<a th:href="@{#one}" class="carousel-item"><img th:src="@{/images/cardimg.jpg}"></a>-->
-        <!--<a th:href="@{#two}" class="carousel-item"><img th:src="@{/images/cardimg.jpg}"></a>-->
-        <!--<a th:href="@{#three}" class="carousel-item"><img th:src="@{/images/cardimg.jpg}"></a>-->
-    <!--</div>-->
+</div>
 
-    <!--&lt;!&ndash; next and prev buttons &ndash;&gt;-->
-
-    <!--<div class="next green"><i class="material-icons large">navigate_next</i></div>-->
-    <!--<div class="prev green"><i class="material-icons large">navigate_before</i></div>-->
-<!--</div>-->
-
+<div class="container">
     <div class="fixed-action-btn"><a class="btn-floating btn-small blue" th:href="@{#top}"><i class="small material-icons"></i></a></div>
     <section id="portfolio" class="center-align">
 
@@ -105,13 +92,9 @@
                         </div>
                     </div>
                 </div>
-
-            </div> <!-- Portfolio Wrapper End -->
-
-
-        </div> <!-- End Row -->
-
-    </section> <!-- Intro Section End-->
+            </div>
+        </div>
+    </section>
 </div>
 <footer th:replace="fragments/footer :: footer"></footer>
 <script th:replace="fragments/scripts :: scripts"></script>
