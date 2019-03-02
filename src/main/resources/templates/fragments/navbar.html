@@ -5,22 +5,26 @@
 <th:block  th:fragment="navbar">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script th:fragment="fragments/scripts :: scripts"></script>
-    <header class="mobile">
+    <header>
         <div class="navbar-fixed">
-            <nav class="grey z-depth-0 black-text">
-                <div class="nav-wrapper">
-                    <a th:href="@{/}" class="brand-logo">
-                        AJB
-                    </a>
+            <nav class="black lighten-2">
+                <div class="nav-wrapper container">
+                    <a th:href="@{/}">AJB</a>
                     <a th:href="@{#}" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">=</i></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a th:href="@{/}">Home</a></li>
-                        <li><a th:href="@{/posts}">Posts</a></li>
-                        <li><a th:href="@{/posts/create}">Create Posts</a></li>
+                        <!--<li><a th:href="@{/}">Home</a></li>-->
+                        <!--<li><a th:href="@{/posts}">Posts</a></li>-->
+                        <!--<li><a th:href="@{/posts/create}">Create Posts</a></li>-->
+                        <li><a href="#AboutMe">About Me</a></li>
+                        <li><a href="#Resume">Resume</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#Blog">Blog</a></li>
+                        <li><a href="#Contact">Contact</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
+
         <ul id="slide-out" class="sidenav waves-effect">
             <li><div class="user-view">
                 <div class="background">
@@ -30,8 +34,11 @@
                 <a th:href="@{#name}"><span class="white-text name">Allen Justin Blanco</span></a>
                 <a th:href="@{#email}"><span class="white-text email">blanco.allenjustin@gmail.com</span></a>
             </div></li>
-            <li><a class="waves-effect" th:href="@{/}">Home</a></li>
-            <li><a class="waves-effect" th:href="@{/posts}">Posts</a></li>
+            <li><a href="#AboutMe">About Me</a></li>
+            <li><a href="#Resume">Resume</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#Blog">Blog</a></li>
+            <li><a href="#Contact">Contact</a></li>
         </ul>
     </header>
 </th:block>

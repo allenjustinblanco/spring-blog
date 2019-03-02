@@ -3,34 +3,68 @@
 <head th:replace="fragments/head :: head('Welcome Home!')"></head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
-<!--<video th:src="@{/videos/aerial.mp4}" th:autoplay="true" th:loop="true" th:audio="muted" th:inline="text">-->
-<!--</video>-->
-<div class="imageBox">
-    <img th:src="@{/images/blur.jpg}" alt="image" width="100%"/>
-    <div class="center-align">
-        <h3>
-            Full Stack Web Developer
-            <br/>
-            | HTML5 - CSS - JS - JAVA |
-        </h3>
+
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <br/><br/>
+            <h1 class="header center text-lighten-2">HI! I'M <span class="teal-text">JUSTIN BLANCO</span></h1>
+            <div class="row center">
+                <h6 class="header col s12 light">Full Stack Web Developer</h6>
+            </div>
+            <div class="row center">
+                <a href="#contact" class="btn-small waves-effect waves-light teal lighten-1">HIRE ME</a>
+            </div>
+            <br/><br/>
+
+        </div>
+    </div>
+    <div class="parallax mainImage"><img src="../../images/cruise.jpeg" th:attr="src=@{/images/cruise.jpeg}, title=#{image}, alt=#{image}" width="100%"/></div>
+</div>
+<div class="container" id="AboutMe">
+    <div class="section">
+<!--about me-->
+        <div class="row">
+            <div class="col s12 m4">
+                <h6 class="teal-text">My Story</h6>
+                <p class="light">Hello, I'm a Full Stack Web Developer from San Antonio, Texas. <br/> I love to learn and create new things with code.
+                    <br/>Thanks for stopping by and feel free to check out some of my <a href="#portfolio"><span class="teal-text">latest projects.</span></a></p>
+            </div>
+
+            <div class="col s12 m4">
+                <img width="100%" src="../../images/portrait.jpg" th:attr="src=@{/images/portrait.jpg}, title=#{image}, alt=#{image}"/>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h6 class="teal-text">Personal Information</h6>
+                    <p class="light" >Name: Allen Justin Blanco</p>
+                    <hr/>
+                    <p class="light">Age: 20 Years</p>
+                    <hr/>
+                    <p class="light">Phone: (210) 518-8350</p>
+                    <hr/>
+                    <p class="light">Email: blanco.allenjustin@gmail.com
+                    </p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 
-<div class="container">
-    <div class="fixed-action-btn"><a class="btn-floating btn-small blue" th:href="@{#top}"><i class="small material-icons"></i></a></div>
-    <section id="portfolio" class="center-align">
+<div class="parallax-container valign-wrapper">
+    <div class="parallax"><img src="../../images/bg5.jpg" th:attr="src=@{/images/bg5.jpg}, title=#{image}, alt=#{image}"/></div>
+</div>
+
+<div class="container ">
+    <section class="center-align">
 
         <div class="row section-head">
             <div class="col full">
 
-                <h2>Portfolio</h2>
+                <h3 class="teal-text"  id="portfolio">Portfolio</h3>
                 <p class="desc">Check out my latest projects.</p>
-
-                <p class="intro">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                    deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.
-                </p>
-
             </div>
         </div>
 
