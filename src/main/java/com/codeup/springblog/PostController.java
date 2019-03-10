@@ -1,38 +1,47 @@
 package com.codeup.springblog;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Paths;
 
 import static java.lang.Long.parseLong;
 
 @Controller
 public class PostController {
+    @Value("${file-upload-path}")
+    private String uploadPath;
 
-//    private final PostService postService;
-//
-//    public PostController(PostService postService) {
-//        this.postService = postService;
-//    }
+    @Autowired
+    private EmailService emailService;
 
-    private final PostRepository postDao;
+    public PostController(EmailService emailService) {
+        this.emailService = emailService;
+    }
+
+    @Autowired
+    private PostRepository postDao;
 
     public PostController(PostRepository postDao){
         this.postDao = postDao;
     }
 
-//    @GetMapping("/posts")
-//    public String index(Model model) {
-//        model.addAttribute("ads", postDao.findAll());
-//        return "/posts/index";
-//    }
+    @Autowired
+    public PostController(EmailService emailService, PostRepository postDao) {
+        this.emailService = emailService;
+        this.postDao = postDao;
+    }
 
     @GetMapping("/posts")
     public String getAllPosts(Model model) {
         Iterable<Post> posts = postDao.findAll();
-//        List<Post> genPost = PostService.generatePost();
         model.addAttribute("posts", posts);
-//        model.addAttribute("genPost", genPost);
         return "posts/index";
     }
 
@@ -49,8 +58,16 @@ public class PostController {
         return "posts/create";
     }
 
-    @PostMapping("/posts/create")
-    public String postCreate(@ModelAttribute Post post, @RequestParam(value = "title") String title, @RequestParam(value = "body") String body){
+    @PostMapping(value = "/posts/create")
+    public String postCreate(@RequestParam(value = "title") String title, @RequestParam(value = "body") String body, @RequestParam(name = "file") MultipartFile uploadedFile, Model model) throws IOException {
+        String filename = uploadedFile.getOriginalFilename();
+        String filepath = Paths.get(uploadPath, filename).toString();
+        File destinationFile = new File(filepath);
+        uploadedFile.transferTo(destinationFile);
+        System.out.println(filename);
+        model.addAttribute("message", "File successfully uploaded!");
+        Post post = new Post();
+        post.setImage(filename);
         post.setTitle(title);
         post.setBody(body);
         postDao.save(post);
@@ -71,9 +88,9 @@ public class PostController {
         postDao.save(post);
         return "redirect:/posts";
     }
-    @GetMapping("posts/delete/{id}")
+    @PostMapping("posts/delete/{id}")
     public String deletePost(@PathVariable long id){
         postDao.delete(id);
-        return "/posts";
+        return "redirect:/posts";
     }
 }

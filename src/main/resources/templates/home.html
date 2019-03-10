@@ -3,133 +3,171 @@
 <head th:replace="fragments/head :: head('Welcome Home!')"></head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
-
-<div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-        <div class="container">
-            <br/><br/>
-            <h1 class="header center text-lighten-2">HI! I'M <span class="teal-text">JUSTIN BLANCO</span></h1>
-            <div class="row center">
-                <h6 class="header col s12 light">Full Stack Web Developer</h6>
+<div class="parallax-container center valign-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 white-text">
+                <h1 class="header center Quicksand" data-aos="zoom-in"  data-aos-easing="linear"
+                    data-aos-duration="1500">HI! I'M <br/><span class="toggle">JUSTIN BLANCO</span></h1>
+                <h6 class="header col s12 white-text Quicksand" data-aos="zoom-in"  data-aos-easing="linear"
+                    data-aos-duration="1500">Full Stack Web Developer</h6>
+                <a href="#Contact" class="btn-large waves-effect waves-dark black lighten-1 white-text Nunito-sans">HIRE ME</a>
             </div>
-            <div class="row center">
-                <a href="#contact" class="btn-small waves-effect waves-light teal lighten-1">HIRE ME</a>
-            </div>
-            <br/><br/>
-
         </div>
     </div>
-    <div class="parallax mainImage"><img src="../../images/cruise.jpeg" th:attr="src=@{/images/cruise.jpeg}, title=#{image}, alt=#{image}" width="100%"/></div>
+    <div class="parallax"><img src="../../images/keyboard.jpg" th:attr="src=@{/images/keyboard.jpg}, title=#{image}, alt=#{image}" width="100%" height="1000"/></div>
 </div>
-<div class="container" id="AboutMe">
-    <div class="section">
-<!--about me-->
+<!--About Me-->
+<div class="grey darken-3" id="AboutMe">
+    <div class="section container">
+        <h3 class="center-align Quicksand white-text">About <span class="toggle">Me</span></h3>
         <div class="row">
-            <div class="col s12 m4">
-                <h6 class="teal-text">My Story</h6>
-                <p class="light">Hello, I'm a Full Stack Web Developer from San Antonio, Texas. <br/> I love to learn and create new things with code.
-                    <br/>Thanks for stopping by and feel free to check out some of my <a href="#portfolio"><span class="teal-text">latest projects.</span></a></p>
+            <div class="col s12 m6 center" data-aos="fade-up">
+                <img width="50%" src="../../images/portrait.jpg" th:attr="src=@{/images/portrait.jpg}, title=#{image}, alt=#{image}"/>
             </div>
-
-            <div class="col s12 m4">
-                <img width="100%" src="../../images/portrait.jpg" th:attr="src=@{/images/portrait.jpg}, title=#{image}, alt=#{image}"/>
+            <div class="col s12 m6" data-aos="fade-up-left">
+                <h6 class="toggle Quicksand white-text">My <span class="toggle">Story</span></h6>
+                <p class="light Nunito-sans white-text">I am thrilled by the ever-changing landscape of the tech industry and all of the new challenges it presents for developers. I have a fresh perspective as an artist across multiple mediums allowing me to take projects and approach them with a unique flair.
+                    <br/>Thanks for stopping by and feel free to check out some of my <a href="#portfolio"><span class="toggle">latest projects.</span></a></p>
+                <a class="btn-small waves-effect waves-dark white lighten-1 black-text toggle" th:href="@{https://drive.google.com/file/d/1bigI8eEWzfmBgbjapvUHQ0R35SXiteBl/view?usp=sharing}" target="_blank">View Resume</a>
+                <br/>
             </div>
-
-            <div class="col s12 m4">
+        </div>
+    </div>
+</div>
+<!--My Skills-->
+<div class="parallax-container center valign-wrapper" id="Skills">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 white-text" data-aos="zoom-in">
+                <h3 class="header center Quicksand"><span class="toggle">My </span>Skills</h3>
                 <div class="icon-block">
-                    <h6 class="teal-text">Personal Information</h6>
-                    <p class="light" >Name: Allen Justin Blanco</p>
-                    <hr/>
-                    <p class="light">Age: 20 Years</p>
-                    <hr/>
-                    <p class="light">Phone: (210) 518-8350</p>
-                    <hr/>
-                    <p class="light">Email: blanco.allenjustin@gmail.com
-                    </p>
+                    <div class="carousel">
+                        <a class="carousel-item"><img width="100%" src="../../images/html5.png" th:attr="src=@{/images/html5.png}" alt="HTML5"/></a>
+                        <a class="carousel-item"><img width="100%" src="../../images/css-3.png" th:attr="src=@{/images/css-3.png}" alt="CSS3"/></a>
+                        <a class="carousel-item"><img width="100%" src="../../images/java.png" th:attr="src=@{/images/java.png}" alt="Java"/></a>
+                        <a class="carousel-item"><img width="100%" src="../../images/spring-boot.png" th:attr="src=@{/images/mysql.png}" alt="MySQL"/></a>
+                        <a class="carousel-item"><img width="100%" src="../../images/spring-boot.png" th:attr="src=@{/images/spring-boot.png}" alt="Spring Boot"/></a>
+                        <a class="carousel-item"><img width="100%" src="../../images/java-script.png" th:attr="src=@{/images/java-script.png}" alt="Javascript"/></a>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
+    <div class="parallax"><img src="../../images/apple.jpg" th:attr="src=@{/images/apple.jpg}, title=#{image}, alt=#{image}" width="100%" height="1000"/></div>
 </div>
 
-<div class="parallax-container valign-wrapper">
-    <div class="parallax"><img src="../../images/bg5.jpg" th:attr="src=@{/images/bg5.jpg}, title=#{image}, alt=#{image}"/></div>
+<!--fixed action button-->
+<div class="fixed-action-btn" >
+    <a class="btn-floating btn-large white pulse"></a>
+    <ul>
+        <li><a class="btn-floating purpletextback" id="purple"></a></li>
+        <li><a class="btn-floating lightblueback" id="blue"></a></li>
+        <li><a class="btn-floating lightpurpleback" id="lightpurple"></a></li>
+    </ul>
 </div>
 
-<div class="container ">
-    <section class="center-align">
-
-        <div class="row section-head">
-            <div class="col full">
-
-                <h3 class="teal-text"  id="portfolio">Portfolio</h3>
-                <p class="desc">Check out my latest projects.</p>
-            </div>
-        </div>
-
+<!--My Portfolio-->
+<section class="section grey white-text darken-3" id="portfolio">
+    <div class="container">
         <div class="row">
-
-            <!-- Portfolio Wrapper -->
-            <div id="portfolio-wrapper">
-
-                <div class="col s12 m6 portfolio-item">
-                    <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-01"><img th:src="@{/images/cardimg.jpg}" alt="" width="100%"/></a>
-                        <div class="portfolio-item-meta">
-                            <h5><a href="#">Local Legends</a></h5>
+            <h3 class="center-align toggle Quicksand" data-aos="zoom-in">Portfolio</h3>
+            <p class="lighten-2 center-align Nunito" data-aos="zoom-in">Check out my latest projects.</p>
+            <div class="col s12 m6 portfolio-item" data-aos="zoom-in">
+                <div class="item-wrap">
+                    <a href="#" data-reveal-id="modal-01"></a>
+                    <div class="card hoverable ">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img th:src="@{/images/cardimg.jpg}" alt="" width="100%"/>
+                        </div>
+                        <div class="card-content black white-text">
+                            <span class="card-title activator Quicksand">Tek Blog</span>
+                            <p><a th:href="@{/posts}" class="toggle Nunito-sans">View page</a></p>
+                        </div>
+                        <div class="card-reveal black">
+                            <span class="card-title Quicksand">Tek Blog</span>
+                            <p class="Nunito-sans">Fully functional Blog website for anyone into Tech. It allows users to create accounts and blog posts. (Spring Boot, Java, JavaScript, JQuery, MySQL, HTML, CSS, Materialize)</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="col s12 m6 portfolio-item">
-                    <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-02"><img th:src="@{/images/cardimg.jpg}" alt="" width="100%"/></a>
-                        <div class="portfolio-item-meta">
-                            <h5><a href="#">Movie Application</a></h5>
+            </div>
+            <div class="col s12 m6 portfolio-item" data-aos="zoom-in">
+                <div class="item-wrap">
+                    <a href="#" data-reveal-id="modal-01"></a>
+                    <div class="card hoverable ">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img th:src="@{/images/cardimg.jpg}" alt="" width="100%"/>
                         </div>
-                    </div>
-                </div>
-
-                <div class="col s12 m6 portfolio-item">
-                    <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-03"><img th:src="@{/images/cardimg.jpg}" alt="" width="100%"/></a>
-                        <div class="portfolio-item-meta">
-                            <h5><a href="#">Coffee Project</a></h5>
+                        <div class="card-content black white-text">
+                            <span class="card-title activator Quicksand">Local Legends</span>
+                            <p><a href="#" class="toggle Nunito-sans">View page</a></p>
                         </div>
-                    </div>
-                </div>
-
-                <div class="col s12 m6 portfolio-item">
-                    <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-04"><img th:src="@{/images/cardimg.jpg}" alt="" width="100%"/></a>
-                        <div class="portfolio-item-meta">
-                            <h5><a href="#">Codeup Design</a></h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s12 m6 portfolio-item">
-                    <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-05"><img th:src="@{/images/cardimg.jpg}" alt="" width="100%"/></a>
-                        <div class="portfolio-item-meta">
-                            <h5><a href="#">Weather Application</a></h5>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s12 m6 portfolio-item">
-                    <div class="item-wrap">
-                        <a href="#" data-reveal-id="modal-06"><img th:src="@{/images/cardimg.jpg}" alt="" width="100%"/></a>
-                        <div class="portfolio-item-meta">
-                            <h5><a href="#">Contacts Manager</a></h5>
+                        <div class="card-reveal black">
+                            <span class="card-title Quicksand">Local Legends</span>
+                            <p class="Nunito-sans">For Musicians and Bands to connect and collaborate. Users can create Ad posts and search the website for other Ads. (HTML, CSS, JavaScript, JSP, JSTL, Java) </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-</div>
+        <div class="row">
+            <div class="col s12 m6 l4 portfolio-item" data-aos="zoom-in">
+                <div class="item-wrap">
+                    <a href="#" data-reveal-id="modal-01"></a>
+                    <div class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img th:src="@{/images/cardimg.jpg}" alt="" width="100%"/>
+                        </div>
+                        <div class="card-content black white-text">
+                            <span class="card-title activator Quicksand" data-position="top" data-tooltip="click for more info">Coffee Project</span>
+                            <p><a th:href="@{https://something-out-of-this-world-coffee-project.glitch.me/}" target="_blank" class="toggle Nunito-sans">View page</a></p>
+                        </div>
+                        <div class="card-reveal black">
+                            <span class="card-title">Coffee Project</span>
+                            <p>Coffee app with live search for multiple types of coffees. Users can also create new coffee's and add them to the list. (HTML, CSS, JavaScript, JQuery)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4 portfolio-item" data-aos="zoom-in">
+                <div class="item-wrap">
+                    <a href="#" data-reveal-id="modal-01"></a>
+                    <div class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img th:src="@{/images/cardimg.jpg}" alt="" width="100%"/>
+                        </div>
+                        <div class="card-content black white-text">
+                            <span class="card-title activator">Movie Box</span>
+                            <p><a href="#" class="toggle">View page</a></p>
+                        </div>
+                        <div class="card-reveal black">
+                            <span class="card-title">Movie Box</span>
+                            <p>Users can search for any movies they like and view the movie page. (HTML, CSS, JavaScript, JQuery, React, Movies DB) </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4 portfolio-item" data-aos="zoom-in">
+                <div class="item-wrap">
+                    <a href="#" data-reveal-id="modal-01"></a>
+                    <div class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img th:src="@{/images/cardimg.jpg}" alt="" width="100%"/>
+                        </div>
+                        <div class="card-content black white-text">
+                            <span class="card-title activator">Weather Application</span>
+                            <p><a href="#" class="toggle">View page</a></p>
+                        </div>
+                        <div class="card-reveal black">
+                            <span class="card-title">Weather Application</span>
+                            <p>Shows a five day forecast of the city of your choosing (HTML, CSS, JavaScript, JQuery, Open Weather Maps API, Google Maps API)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <footer th:replace="fragments/footer :: footer"></footer>
 <script th:replace="fragments/scripts :: scripts"></script>
 </body>

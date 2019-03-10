@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head th:replace="fragments/head :: head('Login!')"></head>
+</head>
+<body class="grey darken-3">
+<nav th:replace="fragments/navbar :: navbar"></nav>
+
+    <div class="container white-text">
+        <h1 class="center-align white-text">Login</h1>
+        <div th:if="${param.error}" class="no-padding red-text">
+            <!--x logo-->
+            Invalid Username and Password.
+        </div>
+        <div th:if="${param.logout}" class="no-padding green-text">
+            <!--checkmark-->
+            You have been logged out.
+        </div>
+
+        <div class="row white-text">
+            <form class="col s12" th:action="@{/login}" method="post">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="username" name="username" type="text" class="validate"/>
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" name="password" type="password" class="validate"/>
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <input type="submit" value="submit" class="btn waves-effect waves-light" />
+            </form>
+        </div>
+    </div>
+<footer th:replace="fragments/footer :: footer"></footer>
+<script th:replace="fragments/scripts :: scripts"></script>
+</body>
+</html>

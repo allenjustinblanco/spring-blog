@@ -1,24 +1,31 @@
 package com.codeup.springblog;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="posts")
+public
 class Post {
     //id BIGINT NOT NULL AUTO_INCREMENT
     @Id @GeneratedValue
     private long id;
     //title VARCHAR(100) NOT NULL,
     @Column(nullable = false, length=100)
+    @NotBlank(message = "Posts must have a title")
     private String title;
     //body VARCHAR(255) NOT NULL
     @Column(nullable = false, length = 5000)
+    @NotBlank(message = "Posts must have a body")
     private String body;
-    //userId VARCHAR(255) NOT NULL
-    @Column(nullable = false)
-    private long userId;
+
+    @Column()
+    private String image;
+
+    @OneToOne
+    private User user;
 
     @Value("${file-upload-path}")
     private String uploadPath;
@@ -26,10 +33,11 @@ class Post {
     public Post(){
     }
 
-    public Post(long userId, String title, String body){
-        this.userId = userId;
+    public Post(Users user, String title, String body, String image){
         this.title = title;
         this.body = body;
+        this.user = (User) user;
+        this.image = image;
     }
 
     Post(String title, String body) {
@@ -61,11 +69,11 @@ class Post {
         this.id = id;
     }
 
-    public long getUserId() {
-        return userId;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public void setUserId(){
-        this.userId = userId;
+    public String getImage() {
+        return image;
     }
 }

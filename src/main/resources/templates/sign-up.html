@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head th:replace="fragments/head :: head('Sign Up!')"></head>
+</head>
+<body class="grey darken-3">
+<nav th:replace="fragments/navbar :: navbar"></nav>
+<h1 class="center-align white-text">Create an account</h1>
+<div class="container white-text">
+    <div class="row">
+        <form class="col s12" th:action="@{/sign-up}" method="post" th:object="${user}">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="first_name" type="text" class="validate" th:field="*{firstName}"/>
+                    <label for="first_name" >First Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="last_name" type="text" class="validate" th:field="*{lastName}"/>
+                    <label for="last_name" >Last Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" type="email" class="validate" th:field="*{email}"/>
+                    <label for="email" >Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="username" type="text" class="validate" th:field="*{username}"/>
+                    <label for="username" >Username</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="password" type="password" class="validate" th:field="*{password}"/>
+                    <label for="password" >Password</label>
+                </div>
+            </div>
+            <input type="submit" value="sign me up!" class="btn waves-effect waves-light" />
+        </form>
+    </div>
+</div>
+<footer th:replace="fragments/footer :: footer"></footer>
+<script th:replace="fragments/scripts :: scripts"></script>
+</body>
+</html>

@@ -2,8 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head th:fragment="head(title)">
     <title th:text="${'Spring Blog | ' + title}"></title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Lato|Raleway" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Inconsolata|Nunito|Nunito+Sans|Pacifico|Quicksand|Rubik|VT323" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script th:replace="fragments/scripts :: scripts"></script>
 </head>

@@ -1,44 +1,57 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" lang="en">
 <head th:replace="fragments/head :: head(navbar)"></head>
 <body>
 <th:block  th:fragment="navbar">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script th:fragment="fragments/scripts :: scripts"></script>
-    <header>
+    <header class="Quicksand">
         <div class="navbar-fixed">
-            <nav class="black lighten-2">
+            <nav class="black white-text" id="navbar">
                 <div class="nav-wrapper container">
-                    <a th:href="@{/}">AJB</a>
-                    <a th:href="@{#}" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">=</i></a>
+                    <a th:href="@{/}"><img th:src="@{/images/logo4.png}" width="100" class="no-padding"/></a>
+                    <a th:href="@{#}" data-target="slide-out" class="sidenav-trigger white-text">=</a>
                     <ul class="right hide-on-med-and-down">
-                        <!--<li><a th:href="@{/}">Home</a></li>-->
-                        <!--<li><a th:href="@{/posts}">Posts</a></li>-->
-                        <!--<li><a th:href="@{/posts/create}">Create Posts</a></li>-->
-                        <li><a href="#AboutMe">About Me</a></li>
-                        <li><a href="#Resume">Resume</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#Blog">Blog</a></li>
-                        <li><a href="#Contact">Contact</a></li>
+                        <li sec:authorize="isAuthenticated()"><a th:href="@{/posts/create}">Create Posts</a></li>
+                        <li><a th:href="@{/#AboutMe}">About Me</a></li>
+                        <li><a th:href="@{https://drive.google.com/file/d/1bigI8eEWzfmBgbjapvUHQ0R35SXiteBl/view?usp=sharing}" target="_blank">Resume</a></li>
+                        <li><a th:href="@{/#portfolio}">Portfolio</a></li>
+                        <li><a th:href="@{/posts}">Blog</a></li>
+                        <li><a th:href="@{#Contact}">Contact</a></li>
+                        <li sec:authorize="!isAuthenticated()"><a th:href="@{/login}">Login</a></li>
+                        <li sec:authorize="!isAuthenticated()"><a th:href="@{/sign-up}">Sign Up</a></li>
+                        <li sec:authorize="isAuthenticated()">
+                            <form th:action="@{/logout}" th:method="post" class="no-padding" id="form1">
+                                <a onclick="document.getElementById('form1').submit();">Logout</a>
+                            </form>
+                        </li>
                     </ul>
                 </div>
             </nav>
         </div>
 
-        <ul id="slide-out" class="sidenav waves-effect">
+        <ul id="slide-out" class="sidenav grey darken-3">
             <li><div class="user-view">
                 <div class="background">
-                    <img th:src="@{https://lorempixel.com/city/400/200}"/>
+                    <img th:src="@{/images/apple.jpg}" width="100%"/>
                 </div>
-                <a th:href="@{#user}"><img class="circle" th:src="@{https://lorempixel.com/sports/10/10}"/></a>
+                <a th:href="@{#user}"><img class="circle" src="../../images/portrait.jpg" th:attr="src=@{/images/portrait.jpg}, title=#{image}, alt=#{image}"/></a>
                 <a th:href="@{#name}"><span class="white-text name">Allen Justin Blanco</span></a>
                 <a th:href="@{#email}"><span class="white-text email">blanco.allenjustin@gmail.com</span></a>
             </div></li>
-            <li><a href="#AboutMe">About Me</a></li>
-            <li><a href="#Resume">Resume</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#Blog">Blog</a></li>
-            <li><a href="#Contact">Contact</a></li>
+            <li><a th:href="@{/#AboutMe}">About Me</a></li>
+            <li><a th:href="@{https://drive.google.com/file/d/1bigI8eEWzfmBgbjapvUHQ0R35SXiteBl/view?usp=sharing}" target="_blank">Resume</a></li>
+            <li><a th:href="@{/#portfolio}">Portfolio</a></li>
+            <li><a th:href="@{#Contact}">Contact</a></li>
+            <li><a th:href="@{/posts}">Blog</a></li>
+            <li sec:authorize="!isAuthenticated()"><a th:href="@{/login}">Login</a></li>
+            <li sec:authorize="!isAuthenticated()"><a th:href="@{/sign-up}">Sign Up</a></li>
+            <li sec:authorize="isAuthenticated()"><a th:href="@{/posts/create}">Create Posts</a></li>
+            <li sec:authorize="isAuthenticated()">
+                <form th:action="@{/logout}" th:method="post" class="no-padding" id="form2">
+                    <a onclick="document.getElementById('form2').submit();">Logout</a>
+                </form>
+            </li>
         </ul>
     </header>
 </th:block>

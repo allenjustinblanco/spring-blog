@@ -2,6 +2,60 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head th:replace="head :: head(footer)"></head>
 <body>
-<footer th:fragment="footer"></footer>
+<footer th:fragment="footer">
+    <!--contact section-->
+    <section class="section grey white-text darken-4" id="Contact">
+        <h3 class="center-align Quicksand white-text">Contact <span class="toggle">Me</span></h3>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 black-text Rubik">
+                    <form th:action="@{/contact}" method="post">
+
+                        <label for="firstname">First Name</label>
+                        <input type="text" id="firstname" name="firstname" placeholder="Your name.."/>
+
+                        <label for="lastname">Last Name</label>
+                        <input type="text" id="lastname" name="lastname" placeholder="Your last name.."/>
+
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" placeholder="Your email..."/>
+
+                        <label for="subject">Subject</label>
+                        <textarea id="subject" name="subject" placeholder="Write something.." class="materialize-textarea"></textarea>
+
+                        <button class="btn waves-effect waves-light black white-text" type="submit" name="action">Submit</button>
+                    </form>
+                    <div class="col s12 center-align">
+                        <div class="icon-block">
+                            <h6 class="Quicksand white-text toggle"><span class="toggle">Personal</span> Information</h6>
+                            <div class="light Nunito white-text">
+                                <p>Name: Allen Justin Blanco</p>
+                                <p>Phone: (210) 518-8350</p>
+                                <p><a th:href="@{mailto:blanco.allenjustin@gmail.com}">Email: blanco.allenjustin@gmail.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="page-footer grey darken-2 black-text no-padding">
+        <div class="footer-copyright">
+            <div class="container black-text">
+                © 2019 Copyright Text
+                <div class="right">
+                <a th:href="@{https://github.com/allenjustinblanco}" target="_blank">
+                    <img th:src="@{/images/github-logo.png}" alt="github" width="30"/> </a>
+                <a th:href="@{https://www.linkedin.com/in/justin-blanco/}" target="_blank">
+                    <img th:src="@{/images/linkedin.png}" alt="linkedin" width="30"/>
+                </a>
+                <a th:href="@{mailto:blanco.allenjustin@gmail.com}">
+                    <img th:src="@{/images/gmail.png}" alt="gmail" width="30"/>
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
