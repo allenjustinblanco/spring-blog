@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head('Create Posts')"></head>
+<body>
+<nav th:replace="fragments/navbar :: navbar"></nav>
+<div class="container">
+    <h1>Create A Post!</h1>
+    <div>
+        <form th:action="@{/fileupload}" method="post" enctype="multipart/form-data" class="left">
+            <label for="file">Upload a file!</label>
+            <br />
+            <input id="file" name="file" type="file" class="btn waves-effect waves-light" />
+            <br />
+            <input type="submit" value="upload" class="btn waves-effect waves-light" />
+        </form>
+    </div>
+</div>
+<footer th:replace="fragments/footer :: footer"></footer>
+<script th:replace="fragments/scripts :: scripts"></script>
+</body>
+</html>

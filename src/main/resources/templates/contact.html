@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head('View All Posts')"></head>
+<body>
+<nav th:replace="fragments/navbar :: navbar"></nav>
+<div class="container">
+    <div class="row">
+        <div class="col s12 center-align">
+            <h2>Thank you, <span th:text="${firstname}"></span>!</h2>
+            <p>an email will be sent to <span th:text="${email}"></span></p>
+            <button class="btn teal white-text waves-effect">
+                <a th:href="@{/posts}" class="white-text">View Blog</a>
+            </button>
+        </div>
+    </div>
+</div>
+<footer th:replace="fragments/footer :: footer"></footer>
+<script th:replace="fragments/scripts :: scripts"></script>
+</body>
+</html>
